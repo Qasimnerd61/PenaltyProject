@@ -1,0 +1,24 @@
+<h1>Hello, Everyone!</h1>
+<p>Welcome to your Penalty Calculator application, built for calculating Book issued Penalties:</p>
+
+
+
+<div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Enter Checkout Date</label>
+            <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">
+        </div>
+        <div class="form-group">
+            <label>Enter Return Date</label>
+            <input type="date" class="form-control" id="endDate" name="endDate" formControlName="endDate">
+        </div>
+        <div class="form-group">
+            <select class="form-select" name="country" formControlName="country">
+                <option selected>Select Country</option>
+                <option *ngFor="let country of countryList" [ngValue]="Countries">{{Countries.counName}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+ </div>
